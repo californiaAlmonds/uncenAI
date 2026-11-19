@@ -10,9 +10,9 @@ Combined, the 3 free tiers give you **~130+ Free T4 GPU Hours per Month** with *
 
 | Provider | Free Monthly Quota | Setup & Auth | Auto-Stop | Status Icon |
 | :--- | :--- | :--- | :--- | :---: |
-| **Google Colab Free** | ~3–4 hours / day (~90–120h/mo) | `colab.exe` (No credit card) | 20 minutes | `$(flame)` |
-| **Lightning.ai Studio** | 22 hours / month (15 free credits) | `lightning login` (No credit card) | 20 minutes | `$(zap)` |
-| **Modal Serverless** | $30 / month free credit (~50h/mo) | `modal setup` | 3 minutes | `$(cloud)` |
+| **Google Colab Free** | ~3–4 hours / day (~90–120h/mo) | `colab.exe` (No credit card) | 20 minutes | 🔥 |
+| **Lightning.ai Studio** | 22 hours / month (15 free credits) | `lightning login` (No credit card) | 20 minutes | ⚡ |
+| **Modal Serverless** | $30 / month free credit (~50h/mo) | `modal setup` | 3 minutes | ☁️ |
 
 ---
 
@@ -74,10 +74,10 @@ Restart or reload VS Code (`Developer: Reload Window`).
 
 ### 1-Click Status Bar Button
 Look at the bottom-left status bar in VS Code:
-- **`$(circle-slash) UncenAI [Colab T4]: OFF (0m/180m)`**: GPU is offline. Click to open menu and boot in 1 click!
-- **`$(sync~spin) UncenAI [Lightning T4]: Starting T4 runtime...`**: Remote instance is provisioning.
-- **`$(zap) UncenAI [Lightning T4]: Qwen 2.5 Coder 14B (45m/1200m)`**: Online and ready! Shows active backend, model, and runtime quota.
-- **`$(cloud) UncenAI [Modal T4]: Qwen 3.5 9B (120m/2700m)`**: Serverless instance active with 3-minute auto-sleep.
+- **`⊘ UncenAI [Colab T4]: OFF (0m/180m)`**: GPU is offline. Click to open menu and boot in 1 click!
+- **`🔄 UncenAI [Lightning T4]: Starting T4 runtime...`**: Remote instance is provisioning.
+- **`⚡ UncenAI [Lightning T4]: Qwen 2.5 Coder 14B (45m/1200m)`**: Online and ready! Shows active backend, model, and runtime quota.
+- **`☁️ UncenAI [Modal T4]: Qwen 3.5 9B (120m/2700m)`**: Serverless instance active with 3-minute auto-sleep.
 
 ### Interactive QuickPick Menu
 Click the status bar item (or press `Ctrl+Shift+P` / `Cmd+Shift+P` -> `UncenAI: Open GPU & Quota Menu`):

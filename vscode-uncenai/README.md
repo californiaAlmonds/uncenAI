@@ -10,9 +10,9 @@ Enjoy **~130+ Free T4 GPU Hours per Month** with **zero local VRAM required**.
 
 | Provider | Free Monthly Quota | Setup & Auth | Auto-Stop | Status Icon |
 | :--- | :--- | :--- | :--- | :---: |
-| **Google Colab Free** | ~3–4 hours / day (~90–120h/mo) | `colab.exe` (No credit card) | 20 minutes | `$(flame)` |
-| **Lightning.ai Studio** | 22 hours / month (15 free credits) | `lightning login` (No credit card) | 20 minutes | `$(zap)` |
-| **Modal Serverless** | $30 / month free credit (~50h/mo) | `modal setup` | 3 minutes | `$(cloud)` |
+| **Google Colab Free** | ~3–4 hours / day (~90–120h/mo) | `colab.exe` (No credit card) | 20 minutes | 🔥 |
+| **Lightning.ai Studio** | 22 hours / month (15 free credits) | `lightning login` (No credit card) | 20 minutes | ⚡ |
+| **Modal Serverless** | $30 / month free credit (~50h/mo) | `modal setup` | 3 minutes | ☁️ |
 
 ---
 
@@ -58,8 +58,8 @@ Then click **Reload Window** when prompted.
 ## 🎮 Status Bar Controls & Agent Mode Usage
 
 Look at the bottom-left status bar in VS Code:
-- **`$(circle-slash) UncenAI [Colab T4]: OFF`**: Click to open the quickpick menu and boot the GPU.
-- **`$(flame) UncenAI [Colab T4]: Qwen 2.5 Coder 14B (12m/180m)`**: GPU online! Hover to view quota breakdown across Colab, Lightning.ai, and Modal.
+- **`⊘ UncenAI [Colab T4]: OFF`**: Click to open the quickpick menu and boot the GPU.
+- **`🔥 UncenAI [Colab T4]: Qwen 2.5 Coder 14B (12m/180m)`**: GPU online! Hover to view quota breakdown across Colab, Lightning.ai, and Modal.
 
 ### Using in Copilot Chat
 1. Open GitHub Copilot Chat (`Ctrl+Alt+I` / `Cmd+Alt+I`).

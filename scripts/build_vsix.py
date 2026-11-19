@@ -23,7 +23,12 @@ BACKEND_DIR = os.path.join(EXT_DIR, "backend")
 PACKAGE_JSON = os.path.join(EXT_DIR, "package.json")
 LICENSE_SRC = os.path.join(REPO_ROOT, "LICENSE")
 LICENSE_DEST = os.path.join(EXT_DIR, "LICENSE")
-OUTPUT_VSIX = os.path.join(REPO_ROOT, "uncenai-free-gpu-1.0.0.vsix")
+def get_output_vsix():
+    with open(PACKAGE_JSON, "r", encoding="utf-8") as f:
+        pkg = json.load(f)
+    version = pkg.get("version", "1.0.0")
+    name = pkg.get("name", "uncenai-free-gpu")
+    return os.path.join(REPO_ROOT, f"{name}-{version}.vsix")
 
 SRC_FILES = [
     "local_controller.py",
@@ -91,12 +96,14 @@ def update_package_metadata(publisher=None, repo_url=None):
         print(f"  - Updated repository: {repo_url}")
 
     with open(PACKAGE_JSON, "w", encoding="utf-8") as f:
-        json.dump(pkg, f, indent=2)
+        json.dump(pkg, f, indent=2, ensure_ascii=False)
+        f.write("\n")
 
 
 def run_vsce_package():
     """Runs @vscode/vsce package to create the distributable .vsix bundle."""
-    print(f"[3/3] Packaging VSIX bundle -> {OUTPUT_VSIX}...")
+    output_vsix = get_output_vsix()
+    print(f"[3/3] Packaging VSIX bundle -> {output_vsix}...")
 
     env = os.environ.copy()
     if os.path.exists("E:\\"):
@@ -111,7 +118,7 @@ def run_vsce_package():
         "package",
         "--allow-missing-repository",
         "-o",
-        OUTPUT_VSIX
+        output_vsix
     ]
 
     print(f"  Running: {' '.join(cmd)} in {EXT_DIR}")
@@ -120,7 +127,7 @@ def run_vsce_package():
         print(f"[ERROR] vsce package failed with exit code {res.returncode}", file=sys.stderr)
         sys.exit(res.returncode)
 
-    print(f"\n[SUCCESS] Successfully built: {OUTPUT_VSIX}")
+    print(f"\n[SUCCESS] Successfully built: {output_vsix}")
 
 
 def main():

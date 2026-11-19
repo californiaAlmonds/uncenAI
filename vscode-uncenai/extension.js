@@ -288,7 +288,8 @@ function updateStatusBar(status) {
         statusBarItem.tooltip = new vscode.MarkdownString(
             '### UncenAI Cloud T4 GPU: OFF\n\n' +
             'Preserving your free GPU quota across Colab, Lightning.ai & Modal.\n\n' +
-            '**Click to open GPU menu & boot in 1 click**'
+            '**Click to open GPU menu & boot in 1 click**',
+            true
         );
         statusBarItem.backgroundColor = undefined;
         statusBarItem.show();
@@ -313,7 +314,8 @@ function updateStatusBar(status) {
 
     if (state === 'ready') {
         statusBarItem.text = `${bMeta.icon} UncenAI [${shortBackend}]: ${shortModel} (${used}m/${soft}m)`;
-        const tip = new vscode.MarkdownString();
+        const tip = new vscode.MarkdownString(undefined, true);
+        tip.supportThemeIcons = true;
         tip.appendMarkdown(`### $(check) UncenAI [${shortBackend}]: ONLINE & READY\n\n`);
         tip.appendMarkdown(`- **Active Backend:** **${bMeta.label}**\n`);
         tip.appendMarkdown(`- **Active Model:** \`${activeModel}\`\n`);
@@ -333,7 +335,8 @@ function updateStatusBar(status) {
             `- **Backend:** **${bMeta.label}**\n` +
             `- **Stage:** ${detail}${pct}\n` +
             `- **Target Model:** \`${status.targetModel || 'Default'}\`\n\n` +
-            `*Booting remote T4 environment & initializing model weights...*`
+            `*Booting remote T4 environment & initializing model weights...*`,
+            true
         );
         statusBarItem.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground');
     } else if (state === 'error') {
@@ -341,7 +344,8 @@ function updateStatusBar(status) {
         statusBarItem.tooltip = new vscode.MarkdownString(
             `### $(error) UncenAI GPU Error [${shortBackend}]\n\n` +
             `**Details:** ${status.lastError || 'Unknown error occurred'}\n\n` +
-            `*Click to retry or switch backend.*`
+            `*Click to retry or switch backend.*`,
+            true
         );
         statusBarItem.backgroundColor = new vscode.ThemeColor('statusBarItem.errorBackground');
     } else {
@@ -353,7 +357,8 @@ function updateStatusBar(status) {
             `- **Quota Used:** **${used}m** / ${soft}m (${quotaPeriodLabel})\n\n` +
             `#### 🌐 Multi-Provider Quota Overview:\n` +
             `${buildQuotaTooltipLines(status)}\n\n` +
-            `**Click to boot T4 GPU in 1 click**`
+            `**Click to boot T4 GPU in 1 click**`,
+            true
         );
         statusBarItem.backgroundColor = undefined;
     }
