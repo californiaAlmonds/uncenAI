@@ -1,0 +1,76 @@
+{
+  "name": "uncenai-free-gpu",
+  "displayName": "UncenAI — 1-Click Free T4 GPU (Colab, Lightning, Modal) for Copilot",
+  "description": "1-click Free T4 GPU launcher (Colab, Lightning.ai, Modal), quota monitor & hot-swapper for VS Code Copilot Agent-Mode",
+  "version": "1.0.0",
+  "publisher": "uncenai",
+  "license": "MIT",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "keywords": [
+    "copilot",
+    "uncensored",
+    "abliterated",
+    "colab",
+    "gpu",
+    "llm",
+    "agent",
+    "qwen",
+    "gemma",
+    "modal",
+    "lightning"
+  ],
+  "categories": [
+    "AI",
+    "Chat",
+    "Machine Learning",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "uncenai.menu",
+        "title": "UncenAI: Open GPU & Quota Menu"
+      },
+      {
+        "command": "uncenai.start",
+        "title": "UncenAI: Start T4 GPU"
+      },
+      {
+        "command": "uncenai.stop",
+        "title": "UncenAI: Stop T4 GPU (Save Quota)"
+      },
+      {
+        "command": "uncenai.auth",
+        "title": "UncenAI: Login to Cloud GPU Providers"
+      },
+      {
+        "command": "uncenai.configureCopilot",
+        "title": "UncenAI: Register Models in Copilot Chat (Agent Mode)"
+      }
+    ],
+    "configuration": {
+      "title": "UncenAI",
+      "properties": {
+        "uncenai.projectRoot": {
+          "type": "string",
+          "default": "",
+          "scope": "application",
+          "description": "Optional override path to an uncenAI checkout. Leave empty to use the bundled backend."
+        },
+        "uncenai.controllerUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:11480",
+          "scope": "application",
+          "description": "Local controller proxy URL"
+        }
+      }
+    }
+  }
+}

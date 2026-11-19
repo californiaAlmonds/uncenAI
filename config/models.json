@@ -1,0 +1,176 @@
+{
+  "proxy": {
+    "host": "127.0.0.1",
+    "localPort": 11480,
+    "tunnelPort": 11481,
+    "remoteLlamaPort": 11482,
+    "colabSessionName": "uncenai",
+    "defaultBackend": "colab",
+    "defaultModel": "qwen2.5-coder-14b-abliterated",
+    "autoStartOnRequest": false
+  },
+  "quota": {
+    "dailySoftLimitMinutes": 180,
+    "dailyHardLimitMinutes": 240,
+    "idleAutoStopMinutes": 20
+  },
+  "backends": {
+    "colab": {
+      "id": "colab",
+      "label": "Google Colab Free T4",
+      "shortLabel": "Colab T4",
+      "exeName": "colab",
+      "sessionName": "uncenai",
+      "quotaPeriod": "daily",
+      "softLimitMinutes": 180,
+      "hardLimitMinutes": 240,
+      "idleAutoStopMinutes": 20
+    },
+    "lightning": {
+      "id": "lightning",
+      "label": "Lightning.ai Studio Free T4 (~22h/mo)",
+      "shortLabel": "Lightning T4",
+      "exeName": "lightning",
+      "studioName": "uncenai",
+      "machine": "T4",
+      "quotaPeriod": "monthly",
+      "softLimitMinutes": 1200,
+      "hardLimitMinutes": 1320,
+      "idleAutoStopMinutes": 20
+    },
+    "modal": {
+      "id": "modal",
+      "label": "Modal Serverless T4 ($30/mo = ~50h/mo)",
+      "shortLabel": "Modal T4",
+      "exeName": "modal",
+      "appName": "uncenai-gpu",
+      "gpu": "T4",
+      "scaledownWindowSeconds": 180,
+      "quotaPeriod": "monthly",
+      "softLimitMinutes": 2700,
+      "hardLimitMinutes": 3000,
+      "idleAutoStopMinutes": 3
+    }
+  },
+  "colabModels": [
+    {
+      "id": "qwen2.5-coder-14b-abliterated",
+      "name": "UncenAI: Qwen 2.5 Coder 14B Abliterated (T4 GPU)",
+      "hfRepo": "bartowski/Qwen2.5-Coder-14B-Instruct-abliterated-GGUF",
+      "hfFile": "Qwen2.5-Coder-14B-Instruct-abliterated-Q4_K_M.gguf",
+      "sizeGB": 8.37,
+      "contextWindow": 24576,
+      "maxOutputTokens": 8192,
+      "toolCalling": true,
+      "vision": false,
+      "thinking": false,
+      "extraLlamaArgs": []
+    },
+    {
+      "id": "josiefied-qwen3-14b-abliterated",
+      "name": "UncenAI: Josiefied Qwen3 14B v3 Abliterated (T4 GPU)",
+      "hfRepo": "bartowski/Goekdeniz-Guelmez_Josiefied-Qwen3-14B-abliterated-v3-GGUF",
+      "hfFile": "Goekdeniz-Guelmez_Josiefied-Qwen3-14B-abliterated-v3-Q4_K_M.gguf",
+      "sizeGB": 8.38,
+      "contextWindow": 24576,
+      "maxOutputTokens": 8192,
+      "toolCalling": true,
+      "vision": false,
+      "thinking": true,
+      "extraLlamaArgs": []
+    },
+    {
+      "id": "qwen3.5-9b-abliterated",
+      "name": "UncenAI: Qwen 3.5 9B Abliterated Fast 32k (T4 GPU)",
+      "hfRepo": "mradermacher/Huihui-Qwen3.5-9B-abliterated-GGUF",
+      "hfFile": "Huihui-Qwen3.5-9B-abliterated.Q4_K_M.gguf",
+      "sizeGB": 5.24,
+      "contextWindow": 32768,
+      "maxOutputTokens": 8192,
+      "toolCalling": true,
+      "vision": false,
+      "thinking": true,
+      "extraLlamaArgs": []
+    },
+    {
+      "id": "gemma-4-12b-heretic-abliterated",
+      "name": "UncenAI: Gemma 4 12B Heretic Abliterated (T4 GPU)",
+      "hfRepo": "culturerevolt/gemma-4-12b-heretic-abliterated-GGUF",
+      "hfFile": "gemma-4-12b-heretic-Q4_K_M.gguf",
+      "sizeGB": 6.87,
+      "contextWindow": 24576,
+      "maxOutputTokens": 8192,
+      "toolCalling": true,
+      "vision": false,
+      "thinking": true,
+      "extraLlamaArgs": []
+    },
+    {
+      "id": "qwen3.6-35b-a3b-abliterated",
+      "name": "UncenAI: Qwen 3.6 35B-A3B MoE Abliterated (T4 GPU Max)",
+      "hfRepo": "mradermacher/Huihui-Qwen3.6-35B-A3B-abliterated-GGUF",
+      "hfFile": "Huihui-Qwen3.6-35B-A3B-abliterated.Q3_K_S.gguf",
+      "sizeGB": 14.14,
+      "contextWindow": 12288,
+      "maxOutputTokens": 4096,
+      "toolCalling": true,
+      "vision": false,
+      "thinking": true,
+      "extraLlamaArgs": [
+        "-ot",
+        "blk\\.(2[6-9]|3[0-9])\\.ffn_.*_exps\\..*=CPU"
+      ]
+    },
+    {
+      "id": "deepseek-r1-qwen-14b-abliterated",
+      "name": "UncenAI: DeepSeek R1 Qwen 14B Abliterated v2 (T4 GPU)",
+      "hfRepo": "mradermacher/DeepSeek-R1-Distill-Qwen-14B-abliterated-v2-GGUF",
+      "hfFile": "DeepSeek-R1-Distill-Qwen-14B-abliterated-v2.Q4_K_M.gguf",
+      "sizeGB": 8.37,
+      "contextWindow": 24576,
+      "maxOutputTokens": 8192,
+      "toolCalling": true,
+      "vision": false,
+      "thinking": true,
+      "extraLlamaArgs": []
+    }
+  ],
+  "openRouterFreeModels": [
+    {
+      "id": "google/gemma-4-31b-it:free",
+      "name": "OpenRouter Free: Gemma 4 31B (Daily Quota)",
+      "contextWindow": 262144,
+      "maxOutputTokens": 8192,
+      "toolCalling": true,
+      "vision": true,
+      "thinking": true
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "name": "OpenRouter Free: Nemotron 3 Ultra 550B (Daily Quota)",
+      "contextWindow": 262144,
+      "maxOutputTokens": 8192,
+      "toolCalling": true,
+      "vision": false,
+      "thinking": true
+    },
+    {
+      "id": "cohere/north-mini-code:free",
+      "name": "OpenRouter Free: North Mini Code (Daily Quota)",
+      "contextWindow": 256000,
+      "maxOutputTokens": 8192,
+      "toolCalling": true,
+      "vision": false,
+      "thinking": false
+    },
+    {
+      "id": "openrouter/free",
+      "name": "OpenRouter Free: Auto-Router (Fallback Quota)",
+      "contextWindow": 200000,
+      "maxOutputTokens": 8192,
+      "toolCalling": true,
+      "vision": false,
+      "thinking": false
+    }
+  ]
+}

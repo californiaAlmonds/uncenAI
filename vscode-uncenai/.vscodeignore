@@ -1,0 +1,8 @@
+.vscode/**
+.git/**
+.github/**
+.DS_Store
+**/*.pyc
+**/__pycache__/**
+*.vsix
+.state/**

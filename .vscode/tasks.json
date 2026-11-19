@@ -1,0 +1,167 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start UncenAI Colab T4 GPU",
+      "type": "shell",
+      "command": "py",
+      "args": ["${workspaceFolder}/src/local_controller.py", "start", "--backend", "colab", "--wait"],
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Start Lightning.ai T4 GPU",
+      "type": "shell",
+      "command": "py",
+      "args": ["${workspaceFolder}/src/local_controller.py", "start", "--backend", "lightning", "--wait"],
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Start / Deploy Modal Serverless T4",
+      "type": "shell",
+      "command": "py",
+      "args": ["${workspaceFolder}/src/local_controller.py", "start", "--backend", "modal", "--wait"],
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Stop UncenAI GPU (Save Quota)",
+      "type": "shell",
+      "command": "py",
+      "args": ["${workspaceFolder}/src/local_controller.py", "stop"],
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "UncenAI Quota & Status",
+      "type": "shell",
+      "command": "py",
+      "args": ["${workspaceFolder}/src/local_controller.py", "status"],
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Login: Google Colab",
+      "type": "shell",
+      "command": "py",
+      "args": ["${workspaceFolder}/src/local_controller.py", "auth", "--backend", "colab"],
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Login: Lightning.ai",
+      "type": "shell",
+      "command": "py",
+      "args": ["${workspaceFolder}/src/local_controller.py", "auth", "--backend", "lightning"],
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Login: Modal",
+      "type": "shell",
+      "command": "py",
+      "args": ["${workspaceFolder}/src/local_controller.py", "auth", "--backend", "modal"],
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Configure VS Code Copilot Agent-Mode Models",
+      "type": "shell",
+      "command": "py",
+      "args": ["${workspaceFolder}/scripts/configure_vscode.py", "--apply"],
+      "options": {
+        "env": {
+          "PYTHONUTF8": "1"
+        }
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false
+      },
+      "problemMatcher": []
+    }
+  ]
+}

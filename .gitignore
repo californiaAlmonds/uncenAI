@@ -1,0 +1,19 @@
+# Local workspace agent configs, MCP tokens, and personal instructions (NEVER commit)
+.agents/
+.mcp.json
+.vscode/mcp.json
+GEMINI.md
+
+# Runtime state, SSH keys, auth tokens, backups, and logs
+.state/
+.colab/
+*.bak
+*.log
+
+# Build artifacts & caches
+__pycache__/
+*.pyc
+*.vsix
+vscode-uncenai/backend/
+node_modules/
+.playwright-mcp/
