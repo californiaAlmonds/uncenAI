@@ -1,9 +1,9 @@
 {
   "name": "uncenai-free-gpu",
-  "displayName": "UncenAI — 1-Click Free T4 GPU (Colab, Lightning, Modal) for Copilot",
+  "displayName": "UncenAI \u2014 1-Click Free T4 GPU (Colab, Lightning, Modal) for Copilot",
   "description": "1-click Free T4 GPU launcher (Colab, Lightning.ai, Modal), quota monitor & hot-swapper for VS Code Copilot Agent-Mode",
   "version": "1.0.0",
-  "publisher": "uncenai",
+  "publisher": "californiaAlmonds",
   "license": "MIT",
   "icon": "icon.png",
   "engines": {
@@ -72,5 +72,9 @@
         }
       }
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/californiaAlmonds/uncenAI"
   }
 }
